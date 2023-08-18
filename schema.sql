@@ -1,6 +1,36 @@
 -- drop database
+DROP DATABASE IF EXISTS pokemon_db;
+
 -- create db
+CREATE DATABASE pokemon_db;
 
 -- use db
+USE pokemon_db;
 
 -- tables
+CREATE TABLE pokemon (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    type VARCHAR(30) NOT NULL,
+    moves INT ,
+    is_evolved BOOLEAN DEFAULT 0,
+    is_caught BOOLEAN DEFAULT 0,
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE moves (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    hp INT NOT NULL,
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE trainers(
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    age INT,
+    num_badges INT DEFAULT 0,
+    date_added DATE NOT NULL DEFAULT NOW(),
+    PRIMARY KEY(id)
+);
+
