@@ -30,7 +30,7 @@ CREATE TABLE trainers(
     name VARCHAR(100) NOT NULL,
     age INT,
     num_badges INT DEFAULT 0,
-    date_added DATE NOT NULL DEFAULT NOW(),
+    date_added TIMESTAMP NOT NULL DEFAULT NOW(),
     PRIMARY KEY(id)
 );
 
