@@ -14,7 +14,7 @@ CREATE TABLE pokemon (
     type VARCHAR(30) NOT NULL,
     moves INT ,
     is_evolved BOOLEAN DEFAULT 0,
-    is_caught BOOLEAN DEFAULT 0,
+    trainer_id INT,
     PRIMARY KEY(id)
 );
 
