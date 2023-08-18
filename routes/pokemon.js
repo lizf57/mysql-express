@@ -1,6 +1,5 @@
-const { route } = require('./moves')
-
 const router = require('express').Router()
+const connection = require('../db/connection')
 
 // created
 router.post('/', async (req, res) => {
@@ -23,8 +22,9 @@ router.get('/', async (req, res) => {
     try {
         const result = await connection.promise().query('SELECT * FROM pokemon;')
 
-    res.json(result)
+    res.json(result[0])
     } catch (err){
+        console.log(err)
         res.status(500).json(err)
     }   
 })
